@@ -13,12 +13,12 @@
 	
 	<div th:unless="${coches.isEmpty()}">
 		<table style="border: 1px solid black;">
-			<tr style="border: 1px solid black;">
+			<tr>
 				<th th:text="#{coche.marca}"></th>
 				<th th:text="#{coche.modelo}"></th>
 				<th th:text="#{coche.precio}"></th>
 			</tr>
-			<tr th:each="coche : ${coches}" style="border: 1px solid black;">
+			<tr th:each="coche : ${coches}">
 				<td th:text="${coche.marca}"></td>
 				<td th:text="${coche.modelo}"></td>
 				<td th:text="${coche.precio}"></td>
