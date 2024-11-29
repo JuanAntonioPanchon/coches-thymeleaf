@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	<title th:text="#{titulo.coches}">Coches</title>
+</head>
+
+<body>
+	<h1 th:text="#{titulo.coches}">Coches</h1>
+	<div th:if="${coches.isEmpty()}">
+		<p th:text="#{message.nohaycoches}"></p>
+	</div>
+	
+	<div th:unless="${coches.isEmpty()}">
+		<table style="border: 1px solid black;">
+			<tr style="border: 1px solid black;">
+				<th th:text="#{coche.marca}"></th>
+				<th th:text="#{coche.modelo}"></th>
+				<th th:text="#{coche.precio}"></th>
+			</tr>
+			<tr th:each="coche : ${coches}" style="border: 1px solid black;">
+				<td th:text="${coche.marca}"></td>
+				<td th:text="${coche.modelo}"></td>
+				<td th:text="${coche.precio}"></td>
+			</tr>
+		</table>
+
+	</div>
+	
+</body>
+
+</html>
