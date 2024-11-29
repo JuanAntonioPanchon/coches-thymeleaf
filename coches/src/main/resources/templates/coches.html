@@ -17,11 +17,13 @@
 				<th th:text="#{coche.marca}"></th>
 				<th th:text="#{coche.modelo}"></th>
 				<th th:text="#{coche.precio}"></th>
+				<th th:text="#{coche.anyo}"></td>
 			</tr>
 			<tr th:each="coche : ${coches}">
 				<td th:text="${coche.marca}"></td>
 				<td th:text="${coche.modelo}"></td>
 				<td th:text="${coche.precio}"></td>
+				<td th:text="${coche.ano}"></td>
 			</tr>
 		</table>
 
