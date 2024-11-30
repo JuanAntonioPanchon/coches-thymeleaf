@@ -7,6 +7,13 @@
 
 <body>
 	<h1 th:text="#{titulo.coches}">Coches</h1>
+
+	<select th:field="*{fuenteEnergia}">
+	    <option value="Gasolina" th:selected="${fuenteEnergia == 'Gasolina'}">Gasolina</option>
+	    <option value="opcion2" th:selected="${selectedOption == 'opcion2'}">Opción 2</option>
+	    <option value="opcion3" th:selected="${selectedOption == 'opcion3'}">Opción 3</option>
+	</select>
+	
 	<div th:if="${coches.isEmpty()}">
 		<p th:text="#{message.nohaycoches}"></p>
 	</div>
