@@ -47,5 +47,14 @@ public class ControladorCoche {
 		 model.addAttribute("coches", coches);
 		 return "coches";
 	 }
+
+	@GetMapping("/filtrar")
+	 public String filtrarFuenteEnergia (@RequestParam String fuenteEnergia, Model model) {
+		 List<Coche> coches = servicioCoches.filtrarFuenteEnergia(FuenteEnergia.valueOf(fuenteEnergia));
+		 model.addAttribute("coches" , coches);
+		 model.addAttribute("fuenteEnergia" , servicioCoches.obtenerFuentesEnergia());
+		 return "coches";
+		 
+	 }
 	 
 }
